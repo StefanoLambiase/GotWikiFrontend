@@ -4,17 +4,22 @@ import {Observable} from 'rxjs';
 import {LocationMainInfo} from '../models/locationMainInfo/location-main-info';
 import {LocationSeasonCount} from '../models/locationSeasonCount/location-season-count';
 
+/***
+ * Servizio usato per comunicare col controller di Location nel back-end.
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class LocationsService {
-  locationsUrl: string;
+  locationsUrl: string; // Url principale del controller.
 
   constructor(
-    private http: HttpClient,
+    private http: HttpClient, // Inject di HttpClient obbligatorio.
   ) {
     this.locationsUrl = 'http://localhost:8080/locations';
   }
+
+  /* Metodi di richiesta di un servizio al controller */
 
   public findAllLocationMainInfo(): Observable<LocationMainInfo[]>{
     // @ts-ignore

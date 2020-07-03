@@ -1,6 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {LocationsTableComponent} from './components/locations-table/locations-table.component';
-import {LocationDetailsComponent} from './components/location-details/location-details.component';
 import {LocationMainInfo} from './models/locationMainInfo/location-main-info';
 
 @Component({
@@ -9,22 +7,25 @@ import {LocationMainInfo} from './models/locationMainInfo/location-main-info';
   styleUrls: ['./locations.component.css']
 })
 export class LocationsComponent implements OnInit {
-  @ViewChild(LocationsTableComponent) locationTableComponent: LocationsTableComponent;
-  @ViewChild(LocationDetailsComponent) locationDetailsComponent: LocationDetailsComponent;
+  /* Variables */
 
-  locationSelected: LocationMainInfo;
+  locationSelected: LocationMainInfo; // Variabile che contiene la location selezionata dalla tabella. Può essere vuota.
+  showDetails = false;  // Variabile usata dal file HTML per capire se costruire il component che mostra i dettagli della location.
 
-  showDetails = false;
+  /* Methods */
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  /***
+   * Metodo chiamato nel momento in cui una delle location nella tabella (component figlio) viene selezionata.
+   * @param locationMainInfo la location selezionata.
+   */
   // tslint:disable-next-line:typedef
   onLocationSelected(locationMainInfo: LocationMainInfo){
     this.locationSelected = locationMainInfo;
     this.showDetails = true;
-    return this.locationSelected;
   }
 }

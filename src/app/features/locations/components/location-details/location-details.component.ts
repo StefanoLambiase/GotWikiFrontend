@@ -3,31 +3,44 @@ import {LocationSeasonCount} from '../../models/locationSeasonCount/location-sea
 import {LocationMainInfo} from '../../models/locationMainInfo/location-main-info';
 import {LocationsService} from '../../services/locations.service';
 
+/***
+ * Component contenente i dettagli di una Location e i grafici ad essa associati.
+ */
 @Component({
   selector: 'app-location-details',
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.css']
 })
 export class LocationDetailsComponent implements OnChanges {
-  @Input() locationMainInfo: LocationMainInfo;
+  @Input() locationMainInfo: LocationMainInfo;  // Variabile contenente le info della location selezionata nella tabella.
   seasonDeathCounts: LocationSeasonCount[];
   seasonSceneCounts: LocationSeasonCount[];
 
-  isDeathChart = false;
+  isDeathChart = false; // Variabile che viene settata a vera quando bisogna mostrare il grafo. Viene fatto un controllo nel file HTML.
 
   constructor(
     private locationsService: LocationsService
   ) { }
 
+  /***
+   * Viene chiamato ogni volta che una variabile @Input viene modificata. Tale modifica, viene fatta dal component padre.
+   * @param changes la modifica.
+   */
   ngOnChanges(changes: SimpleChanges): void {
     this.isDeathChart = false;
     this.updateCounts();
   }
 
+  /***
+   * Metodo chiamato ogni volta che la location selezionata, nella tabella, cambia.
+   * Calcola il numero di morti e di scene per stagione e li salva in due array.
+   * Il calcolo, viene fatto chiamando un servizio nel back-end.
+   */
   updateCounts(): void{
     // Svuoto gli array per sicurezza.
     this.seasonDeathCounts = [];
     this.seasonSceneCounts = [];
+    // Parte riguardante il numero di morti.
     // Itero per eseguire la ricerca solo sulle stagioni che mi interessano e ottenere il conteggio di morti.
     for (let i = 1; i < 9; i++ ){
       // Inizio la registrazione al service per ottenere il risultato.
@@ -45,6 +58,7 @@ export class LocationDetailsComponent implements OnChanges {
         });
       });
     }
+    // Parte riguardante il numero di scene.
     // Itero come sopra ma per ottenere il conteggio di scene.
     for (let i = 1; i < 9; i++ ){
       this.locationsService.findSceneCountPerLocationAndSeason(this.locationMainInfo.locationName, i).subscribe(data => {
@@ -63,6 +77,9 @@ export class LocationDetailsComponent implements OnChanges {
     }
   }
 
+  /***
+   * Metodo usato per passare un array di oggetti renderizzabili dal component per creare il grafo a linee.
+   */
   // tslint:disable-next-line:ban-types
   onDeathGraphButtonPressed(): Object[]{
     // tslint:disable-next-line:ban-types prefer-const
