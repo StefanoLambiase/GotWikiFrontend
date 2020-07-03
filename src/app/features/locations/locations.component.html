@@ -1,0 +1,10 @@
+<h2> Locations page </h2>
+
+<app-locations-table
+  (selectedLocation)="onLocationSelected($event)">
+</app-locations-table>
+
+<app-location-details
+  *ngIf="showDetails"
+  [locationMainInfo]="onLocationSelected(this.locationSelected)">
+</app-location-details>
