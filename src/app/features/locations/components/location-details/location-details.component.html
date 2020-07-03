@@ -1,0 +1,61 @@
+<h3> {{ locationMainInfo.locationName }} Details </h3>
+<p>
+  In questa sezione è possibile osservare le informazioni riguardanti il numero di scene e di morti nella location
+  selezionata divise per stagioni.
+</p>
+
+<mat-grid-list cols="2">
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1">
+    <div>
+      <h5> Deaths </h5>
+
+      <div *ngIf="seasonDeathCounts">
+        <div *ngFor="let loc of seasonDeathCounts">
+          {{ loc.season }} {{ loc.count }}
+        </div>
+      </div>
+
+      <button (click)="isDeathChart = true"> CREATE GRAPH </button>
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1">
+
+    <app-line-chart
+      *ngIf="isDeathChart"
+      [chartData]="onDeathGraphButtonPressed()"
+      [title]="'Death Count'"
+      [xLabel]="'Seasons'"
+      [yLabel]="'Death'">
+    </app-line-chart>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1">
+    <div>
+      <h5> SCENE </h5>
+
+      <div *ngIf="seasonSceneCounts">
+        <div *ngFor="let loc of seasonSceneCounts">
+          {{ loc.season }} {{ loc.count }}
+        </div>
+      </div>
+
+      <!-- <button (click)="this.sceneChartIsVisible = true"> CREATE GRAPH </button> -->
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1">
+
+  </mat-grid-tile>
+</mat-grid-list>
