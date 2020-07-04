@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { LocationsComponent } from '../../features/locations/locations.component';
 import { HomeComponent } from './home/home.component';
+import {HousesComponent} from '../../features/houses/houses.component';
 
 
 
@@ -26,7 +27,8 @@ import { HomeComponent } from './home/home.component';
     RouterModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'locations', component: LocationsComponent }
+      { path: 'locations', component: LocationsComponent },
+      { path: 'houses', component: HousesComponent},
     ])
   ]
 })
