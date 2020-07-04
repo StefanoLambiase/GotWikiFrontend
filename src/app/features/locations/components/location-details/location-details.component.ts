@@ -3,8 +3,6 @@ import {LocationSeasonCount} from '../../models/locationSeasonCount/location-sea
 import {LocationMainInfo} from '../../models/locationMainInfo/location-main-info';
 import {LocationsService} from '../../services/locations.service';
 import {LocSeasonRangeComponent} from '../loc-season-range/loc-season-range.component';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
 
 /***
  * Component contenente i dettagli di una Location e i grafici ad essa associati.
@@ -34,6 +32,7 @@ export class LocationDetailsComponent implements OnChanges {
    */
   ngOnChanges(changes: SimpleChanges): void {
     this.isDeathChart = false;
+    this.isSceneChart = false;
     this.updateCounts();
   }
 
@@ -79,7 +78,6 @@ export class LocationDetailsComponent implements OnChanges {
           }
           return 0;
         });
-        this.isSceneChart = true;
       });
     }
   }
@@ -88,8 +86,7 @@ export class LocationDetailsComponent implements OnChanges {
    * Metodo usato per passare un array di oggetti renderizzabili dal component per creare il grafo a linee.
    */
   // tslint:disable-next-line:ban-types
-  onDeathGraphButtonPressed(): Object[]{
-    this.isDeathChart = true;
+  onGraphButtonPressed(locationSeasonCount: LocationSeasonCount[]): Object[]{
     // Mi prendo il range di stagioni.
     const from = this.seasonRangeComponent.from;
     const to = this.seasonRangeComponent.to;
@@ -98,8 +95,8 @@ export class LocationDetailsComponent implements OnChanges {
     for (let i = from; i <= to; i++){
       charData.push(
         {
-          x: this.seasonDeathCounts[i - 1].season,
-          y: this.seasonDeathCounts[i - 1].count,
+          x: locationSeasonCount[i - 1].season,
+          y: locationSeasonCount[i - 1].count,
         }
       );
     }

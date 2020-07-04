@@ -10,6 +10,7 @@ import {ChartModule} from '@syncfusion/ej2-angular-charts';
 import {LayoutModule} from './shared/layout/layout.module';
 import {RouterModule} from '@angular/router';
 import {HousesModule} from './features/houses/houses.module';
+import {CharactersModule} from './features/characters/characters.module';
 
 
 @NgModule({
@@ -20,12 +21,13 @@ import {HousesModule} from './features/houses/houses.module';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    LocationsModule,
     HousesModule,
     ChartModule,
     LayoutModule,
     RouterModule,
+    LocationsModule,
     HousesModule,
+    CharactersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
