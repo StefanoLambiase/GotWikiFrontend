@@ -1,0 +1,34 @@
+<!-- Per aggiungere link occorre aggiungere la proprietà [routerLink] al tag del link
+  per specificare il path navigazionale, occorre andare nel lyout.module.ts
+  e aggiungere un path in "import" sotto "RouterModule" -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Navigation bar
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/characters'] ">Characters</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Houses</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Seasons</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/locations']">Locations</a>
+      </li>
+    </ul>
+  </div>
+</nav>

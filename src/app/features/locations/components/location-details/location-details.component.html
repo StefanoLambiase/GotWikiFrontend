@@ -4,11 +4,9 @@
   selezionata divise per stagioni.
 </p>
 
-<mat-grid-list cols="2">
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
-    <div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
       <h5> Deaths </h5>
 
       <div *ngIf="seasonDeathCounts">
@@ -18,28 +16,20 @@
       </div>
 
       <button (click)="isDeathChart = true"> CREATE GRAPH </button>
-
     </div>
-  </mat-grid-tile>
+    <div class="col-sm">
+      <app-line-chart
+        *ngIf="isDeathChart"
+        [chartData]="onDeathGraphButtonPressed()"
+        [title]="'Death Count'"
+        [xLabel]="'Seasons'"
+        [yLabel]="'Death'">
+      </app-line-chart>
+    </div>
+  </div>
 
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
-
-    <app-line-chart
-      *ngIf="isDeathChart"
-      [chartData]="onDeathGraphButtonPressed()"
-      [title]="'Death Count'"
-      [xLabel]="'Seasons'"
-      [yLabel]="'Death'">
-    </app-line-chart>
-
-  </mat-grid-tile>
-
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
-    <div>
+  <div class="row">
+    <div class="col-sm">
       <h5> SCENE </h5>
 
       <div *ngIf="seasonSceneCounts">
@@ -49,13 +39,9 @@
       </div>
 
       <!-- <button (click)="this.sceneChartIsVisible = true"> CREATE GRAPH </button> -->
+    </div>
+    <div class="col-sm">
 
     </div>
-  </mat-grid-tile>
-
-  <mat-grid-tile
-    [colspan]="1"
-    [rowspan]="1">
-
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
