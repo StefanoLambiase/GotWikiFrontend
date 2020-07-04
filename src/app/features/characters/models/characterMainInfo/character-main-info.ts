@@ -7,4 +7,5 @@ export class CharacterMainInfo {
   actor: string;
   sceneCount: number;
   killCount: number;
+  imageFull: string;
 }

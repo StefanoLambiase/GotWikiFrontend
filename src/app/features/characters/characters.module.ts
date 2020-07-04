@@ -10,6 +10,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { CharacterCardComponent } from './components/character-card/character-ca
     MatInputModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     CharactersService,
