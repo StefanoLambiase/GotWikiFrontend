@@ -1,7 +1,10 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {LocationSeasonCount} from '../../models/locationSeasonCount/location-season-count';
 import {LocationMainInfo} from '../../models/locationMainInfo/location-main-info';
 import {LocationsService} from '../../services/locations.service';
+import {LocSeasonRangeComponent} from '../loc-season-range/loc-season-range.component';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 /***
  * Component contenente i dettagli di una Location e i grafici ad essa associati.
@@ -12,11 +15,14 @@ import {LocationsService} from '../../services/locations.service';
   styleUrls: ['./location-details.component.css']
 })
 export class LocationDetailsComponent implements OnChanges {
+  @ViewChild(LocSeasonRangeComponent) private seasonRangeComponent: LocSeasonRangeComponent;
+
   @Input() locationMainInfo: LocationMainInfo;  // Variabile contenente le info della location selezionata nella tabella.
   seasonDeathCounts: LocationSeasonCount[];
   seasonSceneCounts: LocationSeasonCount[];
 
   isDeathChart = false; // Variabile che viene settata a vera quando bisogna mostrare il grafo. Viene fatto un controllo nel file HTML.
+  isSceneChart = false;
 
   constructor(
     private locationsService: LocationsService
@@ -73,6 +79,7 @@ export class LocationDetailsComponent implements OnChanges {
           }
           return 0;
         });
+        this.isSceneChart = true;
       });
     }
   }
@@ -82,16 +89,19 @@ export class LocationDetailsComponent implements OnChanges {
    */
   // tslint:disable-next-line:ban-types
   onDeathGraphButtonPressed(): Object[]{
+    this.isDeathChart = true;
+    // Mi prendo il range di stagioni.
+    const from = this.seasonRangeComponent.from;
+    const to = this.seasonRangeComponent.to;
     // tslint:disable-next-line:ban-types prefer-const
     let charData: Object[] = [];
-    for (const count of this.seasonDeathCounts){
+    for (let i = from; i <= to; i++){
       charData.push(
         {
-          x: count.season,
-          y: count.count,
+          x: this.seasonDeathCounts[i - 1].season,
+          y: this.seasonDeathCounts[i - 1].count,
         }
       );
-      console.log(charData);
     }
     return charData;
   }

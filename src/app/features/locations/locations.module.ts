@@ -13,13 +13,17 @@ import { LocationsService } from './services/locations.service';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {ChartsModule} from '../../shared/charts/charts.module';
 import {LayoutModule} from '../../shared/layout/layout.module';
+import { LocSeasonRangeComponent } from './components/loc-season-range/loc-season-range.component';
+import {FormsModule} from '@angular/forms';
+import {TablesModule} from '../../shared/tables/tables.module';
 
 
 @NgModule({
   declarations: [
     LocationsComponent,
     LocationDetailsComponent,
-    LocationsTableComponent
+    LocationsTableComponent,
+    LocSeasonRangeComponent
   ],
   exports: [
       LocationsComponent
@@ -33,6 +37,8 @@ import {LayoutModule} from '../../shared/layout/layout.module';
     MatGridListModule,
     ChartsModule,
     LayoutModule,
+    FormsModule,
+    TablesModule,
   ],
   providers: [
     LocationsService,

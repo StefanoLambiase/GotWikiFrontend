@@ -7,13 +7,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <h5> Deaths </h5>
-
-      <div *ngIf="seasonDeathCounts">
-        <div *ngFor="let loc of seasonDeathCounts">
-          {{ loc.season }} {{ loc.count }}
-        </div>
-      </div>
+      <h3> Number of deaths per season </h3>
+      <app-season-count-table
+        *ngIf="seasonDeathCounts"
+        [dataSource]="seasonDeathCounts">
+      </app-season-count-table>
+      <app-loc-season-range></app-loc-season-range>
 
       <button (click)="isDeathChart = true"> CREATE GRAPH </button>
     </div>
@@ -30,15 +29,14 @@
 
   <div class="row">
     <div class="col-sm">
-      <h5> SCENE </h5>
+      <h3> Number of scenes per season </h3>
 
-      <div *ngIf="seasonSceneCounts">
-        <div *ngFor="let loc of seasonSceneCounts">
-          {{ loc.season }} {{ loc.count }}
-        </div>
-      </div>
+      <app-season-count-table
+        *ngIf="seasonSceneCounts"
+        [dataSource]="seasonSceneCounts">
+      </app-season-count-table>
 
-      <!-- <button (click)="this.sceneChartIsVisible = true"> CREATE GRAPH </button> -->
+      <button (click)="isSceneChart = true"> CREATE GRAPH </button>
     </div>
     <div class="col-sm">
 
