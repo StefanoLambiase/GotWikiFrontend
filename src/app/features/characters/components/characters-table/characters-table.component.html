@@ -1,1 +1,64 @@
-<p>characters-table works!</p>
+<h3> Characters table </h3>
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </label>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <!-- First column definition -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let character"> {{ character.name }} </td>
+  </ng-container>
+  <!-- Second column definition -->
+  <ng-container matColumnDef="house">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> House </th>
+    <td mat-cell *matCellDef="let character"> {{ character.house }} </td>
+  </ng-container>
+  <ng-container matColumnDef="nickname">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> nickname </th>
+    <td mat-cell *matCellDef="let character"> {{ character.nickname }} </td>
+  </ng-container>
+  <ng-container matColumnDef="isRoyal">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> royal </th>
+    <td mat-cell *matCellDef="let character"> {{ character.royal }} </td>
+  </ng-container>
+  <ng-container matColumnDef="isAlive">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> alive </th>
+    <td mat-cell *matCellDef="let character"> {{ character.alive }} </td>
+  </ng-container>
+  <ng-container matColumnDef="actor">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> actor </th>
+    <td mat-cell *matCellDef="let character"> {{ character.actor }} </td>
+  </ng-container>
+  <!-- Third column definition -->
+  <ng-container matColumnDef="sceneCount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> # scene </th>
+    <td mat-cell *matCellDef="let character"> {{ character.sceneCount }} </td>
+  </ng-container>
+  <!-- Forth column definition -->
+  <ng-container matColumnDef="killCount">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> # death </th>
+    <td mat-cell *matCellDef="let character"> {{ character.killCount }} </td>
+  </ng-container>
+
+  <!-- Standard row definition -->
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row
+      class="example-element-row"
+      *matRowDef="let character; columns: columnsToDisplay"
+      (click)="selectCharacter(character)">
+  </tr>
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+
+</table>
+
+<mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons>
+
+</mat-paginator>

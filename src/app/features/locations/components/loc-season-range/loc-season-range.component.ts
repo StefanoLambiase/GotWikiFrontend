@@ -22,6 +22,4 @@ export class LocSeasonRangeComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
   }
-
-  // TODO: Remove this when we're done
 }
