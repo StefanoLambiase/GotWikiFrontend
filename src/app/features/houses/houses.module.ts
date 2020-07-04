@@ -9,13 +9,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {HousesService} from './services/houses.service';
+import { HousesCardComponent } from './components/houses-card/houses-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
 @NgModule({
   declarations: [
     HousesComponent,
-    HousesTableComponent
+    HousesTableComponent,
+    HousesCardComponent
   ],
   exports: [
     HousesComponent
@@ -27,7 +31,9 @@ import {HousesService} from './services/houses.service';
     MatTableModule,
     MatInputModule,
     MatSortModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     HousesService

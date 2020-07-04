@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {HouseKillCount} from '../../models/houseKillCount/house-kill-count';
 import {MatSort} from '@angular/material/sort';
 import {HousesService} from '../../services/houses.service';
@@ -16,6 +16,8 @@ export class HousesTableComponent implements OnInit {
   columnsToDisplay = ['Name', 'Religion', 'Lord', 'KillCount'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  @Output() selectedHouseEvent = new EventEmitter<HouseKillCount>();
+
   constructor(
     private housesService: HousesService
   ) { }
@@ -25,6 +27,7 @@ export class HousesTableComponent implements OnInit {
       this.houseKillCount = data;
       this.dataSource = new MatTableDataSource(this.houseKillCount);
       this.dataSource.sort = this.sort;
+      console.log(this.houseKillCount[0].houseCoa);
     });
   }
 
@@ -32,5 +35,10 @@ export class HousesTableComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  // tslint:disable-next-line:typedef
+  selectHouse(houseKillCount: HouseKillCount){
+    this.selectedHouseEvent.emit(houseKillCount);
   }
 }

@@ -1,0 +1,18 @@
+<p>houses-card works!</p>
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{houseKillCount.houseName}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{houseKillCount.houseCoa}}"  alt="photo of GoT's houses">
+  <mat-card-content>
+    <p>
+      Motto : "{{houseKillCount.houseWords}}" <br/>
+      Alive : {{houseKillCount.status}} <br/>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
