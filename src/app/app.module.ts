@@ -7,11 +7,13 @@ import {HttpClientModule} from '@angular/common/http';
 
 import {LocationsModule} from './features/locations/locations.module';
 import {ChartModule} from '@syncfusion/ej2-angular-charts';
+import {LayoutModule} from './shared/layout/layout.module';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,8 @@ import {ChartModule} from '@syncfusion/ej2-angular-charts';
     HttpClientModule,
     LocationsModule,
     ChartModule,
+    LayoutModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

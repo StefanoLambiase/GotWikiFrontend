@@ -12,6 +12,7 @@ import { LocationsTableComponent } from './components/locations-table/locations-
 import { LocationsService } from './services/locations.service';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {ChartsModule} from '../../shared/charts/charts.module';
+import {LayoutModule} from '../../shared/layout/layout.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {ChartsModule} from '../../shared/charts/charts.module';
     MatSortModule,
     MatGridListModule,
     ChartsModule,
+    LayoutModule,
   ],
   providers: [
     LocationsService,
