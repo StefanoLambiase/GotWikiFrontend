@@ -14,17 +14,24 @@ export class CharacterDetailsComponent implements OnChanges {
   categoriesKillCount: CategoriesKillCount;
   killedPersons: KilledPerson[];
 
+  categoriesFound = false;
+  peopleFound = false;
+
   constructor(
     private charactersService: CharactersService,
   ) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.categoriesFound = false;
+    this.peopleFound = false;
     this.charactersService.findKillCountPerCategories(this.characterSelected.name).subscribe(data => {
       this.categoriesKillCount = data;
+      this.categoriesFound = true;
     });
     this.charactersService.findAllKilledPeople(this.characterSelected.name).subscribe(data => {
       this.killedPersons = data;
+      this.peopleFound = true;
     });
   }
 

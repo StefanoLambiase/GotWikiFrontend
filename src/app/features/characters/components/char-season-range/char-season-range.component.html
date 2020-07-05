@@ -1,0 +1,27 @@
+<h3> Season range </h3>
+
+<div class="container">
+  <div class="form-group">
+    <div class="row">
+
+      <div class="col-sm">
+        <label> from </label>
+        <select class="form-control" id="from"
+          required
+          [(ngModel)]="from" name="from">
+          <option *ngFor="let x of seasonNumbers" [value]="x">{{x}}</option>
+        </select>
+      </div>
+
+      <div class="col-sm">
+        <label> to </label>
+        <select class="form-control" id="to"
+          required
+          [(ngModel)]="to" name="to">
+          <option *ngFor="let x of seasonNumbers" [value]="x">{{x}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+

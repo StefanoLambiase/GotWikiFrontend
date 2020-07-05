@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <app-char-season-range></app-char-season-range>
+
+      <button (click)="isSceneChart = false; isKillChart = true"> CREATE KILLS GRAPH </button>
+      <button (click)="isKillChart = false; isSceneChart = true"> CREATE SCENES GRAPH </button>
+    </div>
+
+    <div class="col-sm">
+      <app-line-chart
+        *ngIf="isSceneChart"
+        [chartData]="onGraphButtonPressed(this.seasonSceneCounts)"
+        [title]="'Scene Count'"
+        [xLabel]="'Seasons'"
+        [yLabel]="'Scene'">
+      </app-line-chart>
+
+      <app-line-chart
+        *ngIf="isKillChart"
+        [chartData]="onGraphButtonPressed(this.seasonKillCounts)"
+        [title]="'Death Count'"
+        [xLabel]="'Seasons'"
+        [yLabel]="'Death'">
+      </app-line-chart>
+    </div>
+
+  </div>
+</div>

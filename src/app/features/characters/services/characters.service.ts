@@ -5,6 +5,7 @@ import {CharacterMainInfo} from '../models/characterMainInfo/character-main-info
 import {CharacterRelationships} from '../models/characterRelationships/character-relationships';
 import {KilledPerson} from '../models/killedPerson/killed-person';
 import {CategoriesKillCount} from '../models/categoriesKillCount/categories-kill-count';
+import {SeasonDataCount} from '../../../shared/models/seasonDataCount/season-data-count';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,19 @@ export class CharactersService {
     const params = new HttpParams()
       .set('characterName', characterName);
     return this.http.get<CategoriesKillCount>(this.charactersUrl + '/kill-count-per-category', {params});
+  }
+
+  public findKillCountPerSeason(characterName: string, season: number): Observable<SeasonDataCount>{
+    const params = new HttpParams()
+      .set('characterName', characterName)
+      .set('season', String(season));
+    return this.http.get<SeasonDataCount>(this.charactersUrl + '/kill-per-season', {params});
+  }
+
+  public findSceneCountPerSeason(characterName: string, season: number): Observable<SeasonDataCount>{
+    const params = new HttpParams()
+      .set('characterName', characterName)
+      .set('season', String(season));
+    return this.http.get<SeasonDataCount>(this.charactersUrl + '/scenes-per-season', {params});
   }
 }

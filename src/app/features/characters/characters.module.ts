@@ -16,6 +16,10 @@ import { KillsCardComponent } from './components/kills-card/kills-card.component
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { CharSeasonRangeComponent } from './components/char-season-range/char-season-range.component';
+import {FormsModule} from '@angular/forms';
+import { CharacterGraphComponent } from './components/character-graph/character-graph.component';
+import {ChartsModule} from '../../shared/charts/charts.module';
 
 
 @NgModule({
@@ -25,6 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
     CharacterDetailsComponent,
     CharacterCardComponent,
     KillsCardComponent,
+    CharSeasonRangeComponent,
+    CharacterGraphComponent,
   ],
   exports: [
     CharactersComponent,
@@ -40,7 +46,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatDividerModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ChartsModule
   ],
   providers: [
     CharactersService,

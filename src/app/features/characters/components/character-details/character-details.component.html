@@ -2,12 +2,14 @@
   <div class="row">
     <div class="col-sm">
       <app-character-card
+        *ngIf="characterSelected"
         [characterSelected]="characterSelected">
 
       </app-character-card>
     </div>
     <div class="col-sm">
       <app-kills-card
+        *ngIf="categoriesFound && peopleFound"
         [categoriesKillCount]="categoriesKillCount"
         [killedPersons]="killedPersons">
       </app-kills-card>
@@ -16,7 +18,10 @@
 
   <div class="row">
     <div class="col-sm">
-      <!-- GRAPHS SECTIONS -->
+      <app-character-graph
+        *ngIf="characterSelected"
+        [characterMainInfo]="characterSelected">
+      </app-character-graph>
     </div>
   </div>
 </div>

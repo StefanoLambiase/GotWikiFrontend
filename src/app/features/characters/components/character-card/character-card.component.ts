@@ -12,6 +12,8 @@ export class CharacterCardComponent implements OnChanges {
   @Input() characterSelected: CharacterMainInfo;
   characterRelationships: CharacterRelationships;
 
+  finished = false;
+
   constructor(
     private charactersService: CharactersService,
   ) { }
@@ -19,6 +21,7 @@ export class CharacterCardComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.charactersService.findAllRelationships(this.characterSelected.name).subscribe(data => {
       this.characterRelationships = data;
+      this.finished = true;
     });
   }
 
