@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { KillsCardComponent } from './components/kills-card/kills-card.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {MatListModule} from '@angular/material/list';
     MatCardModule,
     MatButtonModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatIconModule
   ],
   providers: [
     CharactersService,

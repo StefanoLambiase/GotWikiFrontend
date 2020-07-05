@@ -6,7 +6,7 @@
     <h3> Kills per methods </h3>
 
     <p *ngFor="let x of this.categoriesKillCount.killMethodCategories">
-      <b>{{ x }}</b>: {{ this.categoriesKillCount.killCountPerCategories[this.categoriesKillCount.killMethodCategories.indexOf(x)] }}
+      <b>{{ x }}</b>:   {{ this.categoriesKillCount.killCountPerCategories[this.categoriesKillCount.killMethodCategories.indexOf(x)] }}
     </p>
 
     <mat-divider></mat-divider>
@@ -14,8 +14,11 @@
     <h3> Killed people </h3>
 
     <p *ngFor="let x of this.killedPersons">
-      <b>{{ x.name }}</b>: {{ x.count }}
+      <b>{{ x.name }}</b>:   {{ x.count }}
     </p>
+
+    <mat-divider></mat-divider>
+
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>I LOVE IT</button>
