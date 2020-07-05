@@ -1,4 +1,22 @@
-<app-character-card
-  [characterSelected]="characterSelected">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <app-character-card
+        [characterSelected]="characterSelected">
 
-</app-character-card>
+      </app-character-card>
+    </div>
+    <div class="col-sm">
+      <app-kills-card
+        [categoriesKillCount]="categoriesKillCount"
+        [killedPersons]="killedPersons">
+      </app-kills-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <!-- GRAPHS SECTIONS -->
+    </div>
+  </div>
+</div>

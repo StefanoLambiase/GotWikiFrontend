@@ -12,6 +12,9 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { KillsCardComponent } from './components/kills-card/kills-card.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
     CharactersTableComponent,
     CharacterDetailsComponent,
     CharacterCardComponent,
+    KillsCardComponent,
   ],
   exports: [
     CharactersComponent,
@@ -32,7 +36,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatPaginatorModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [
     CharactersService,
