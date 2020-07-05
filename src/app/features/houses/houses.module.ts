@@ -12,6 +12,7 @@ import {HousesService} from './services/houses.service';
 import { HousesCardComponent } from './components/houses-card/houses-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -24,17 +25,18 @@ import {MatButtonModule} from '@angular/material/button';
   exports: [
     HousesComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatInputModule,
-    MatSortModule,
-    MatGridListModule,
-    MatCardModule,
-    MatButtonModule
-  ],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        MatFormFieldModule,
+        MatTableModule,
+        MatInputModule,
+        MatSortModule,
+        MatGridListModule,
+        MatCardModule,
+        MatButtonModule,
+        MatListModule
+    ],
   providers: [
     HousesService
   ],

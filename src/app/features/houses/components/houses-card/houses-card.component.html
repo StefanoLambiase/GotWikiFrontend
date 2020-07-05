@@ -1,4 +1,3 @@
-<p>houses-card works!</p>
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -6,10 +5,57 @@
   </mat-card-header>
   <img mat-card-image src="{{houseKillCount.houseCoa}}"  alt="photo of GoT's houses">
   <mat-card-content>
-    <p>
-      Motto : "{{houseKillCount.houseWords}}" <br/>
-      Alive : {{houseKillCount.status}} <br/>
-    </p>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm">
+          <h1> <em>"{{houseKillCount.houseWords}}"</em></h1>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="row">
+        <div class="col-sm">
+          <h2> <b>Religion</b></h2>
+        </div>
+        <div class="col-sm">
+          <b> {{houseKillCount.houseReligion}} </b>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="row">
+        <div class="col-sm">
+          <h2> <b>Lord</b></h2>
+        </div>
+        <div class="col-sm">
+          <b> {{houseKillCount.houseLord}} </b>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm">
+          <h2> <b>Seat</b></h2>
+        </div>
+        <div class="col-sm">
+          <b> {{houseKillCount.houseSeat}} </b>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="row">
+        <div class="col-sm">
+          <h2> <b>Active</b></h2>
+        </div>
+        <div class="col-sm">
+          <b> {{houseKillCount.status}} </b>
+        </div>
+      </div>
+
+    </div>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>LIKE</button>
