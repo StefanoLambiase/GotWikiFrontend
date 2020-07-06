@@ -14,6 +14,8 @@
               role="listitem">
               <mat-icon matListIcon>account_circle</mat-icon>
               {{c.name}}
+              <mat-icon *ngIf="c.alive == true"  [ngStyle]="{'color':'green'}">favorite</mat-icon>
+              <mat-icon *ngIf="c.alive == false"  [ngStyle]="{'color':'red'}">clear</mat-icon>
             </mat-list-item>
           </mat-list>
         </div>
