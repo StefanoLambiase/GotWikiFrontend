@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild} from '@angular/core';
 import {EpisodePerSeason} from '../../models/episode-per-season';
 import {MatSort} from '@angular/material/sort';
 import {SeasonService} from '../../services/season.service';
@@ -10,7 +10,7 @@ import {HouseKillCount} from '../../../houses/models/houseKillCount/house-kill-c
   templateUrl: './season-table.component.html',
   styleUrls: ['./season-table.component.css']
 })
-export class SeasonTableComponent implements OnInit {
+export class SeasonTableComponent implements OnChanges {
   episodeToDisplay: EpisodePerSeason[];
   dataSource;
   @Input() seasonNumber: number;
@@ -24,7 +24,7 @@ export class SeasonTableComponent implements OnInit {
     private seasonService: SeasonService
   ) { }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     this.seasonService.getEpisodePerSeason(this.seasonNumber).subscribe( data => {
       this.episodeToDisplay = data;
       this.dataSource = new MatTableDataSource(this.episodeToDisplay);

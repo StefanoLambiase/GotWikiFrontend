@@ -1,4 +1,5 @@
 import {Component, OnInit, Output} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-seasons',
@@ -6,11 +7,16 @@ import {Component, OnInit, Output} from '@angular/core';
   styleUrls: ['./seasons.component.css']
 })
 export class SeasonsComponent implements OnInit {
-  seasonNumber = 2;
+  seasonNumber;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.seasonNumber = params.get('seasonNumber');
+    });
   }
 
 }
