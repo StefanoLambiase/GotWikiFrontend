@@ -32,7 +32,7 @@ import {SeasonsComponent} from '../../features/seasons/seasons.component';
       { path: 'locations', component: LocationsComponent },
       { path: 'houses', component: HousesComponent},
       { path: 'characters', component: CharactersComponent},
-      { path: 'seasons', component: SeasonsComponent}
+      { path: 'seasons/:seasonNumber', component: SeasonsComponent}
     ])
   ]
 })
