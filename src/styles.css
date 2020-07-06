@@ -2,4 +2,10 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 html, body { height: 100%; }
-body { margin: 50px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 50px;
+  font-family: Roboto,
+  "Helvetica Neue",
+  sans-serif;
+  background-image: url("images/sfondo_generale.jpg")
+}
