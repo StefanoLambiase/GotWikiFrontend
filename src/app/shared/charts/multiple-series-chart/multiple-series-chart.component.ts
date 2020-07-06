@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-multiple-series-chart',
@@ -22,15 +22,13 @@ export class MultipleSeriesChartComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.chartData);
     this.primaryXAxis = {
-      title: 'Episodes',
-      interval: 1,
-      labelIntersectAction : 'Rotate45',
+      valueType: 'Category',
+      title: 'Episodes'
     };
     this.primaryYAxis = {
-      title: 'Scores',
-      minimum: 0, maximum: 15, interval: 1
+      minimum: 0, maximum: 15,
+      interval: 1, title: 'Score'
     };
-    this.marker = { visible: true, width: 10, opacity: 0.6, height: 10 };
   }
 
 }

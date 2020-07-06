@@ -8,11 +8,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {SeasonService} from './services/season.service';
 import {ChartsModule} from '../../shared/charts/charts.module';
+import { EpisodesScoreGraphComponent } from './components/episodes-score-graph/episodes-score-graph.component';
 
 
 
 @NgModule({
-  declarations: [SeasonsComponent, SeasonTableComponent],
+  declarations: [SeasonsComponent, SeasonTableComponent, EpisodesScoreGraphComponent],
     imports: [
         CommonModule,
         MatFormFieldModule,
