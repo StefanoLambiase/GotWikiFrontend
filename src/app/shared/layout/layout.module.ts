@@ -8,6 +8,7 @@ import { LocationsComponent } from '../../features/locations/locations.component
 import { HomeComponent } from './home/home.component';
 import {HousesComponent} from '../../features/houses/houses.component';
 import {CharactersComponent} from '../../features/characters/characters.component';
+import {SeasonsComponent} from '../../features/seasons/seasons.component';
 
 
 
@@ -30,7 +31,8 @@ import {CharactersComponent} from '../../features/characters/characters.componen
       { path: '', component: HomeComponent },
       { path: 'locations', component: LocationsComponent },
       { path: 'houses', component: HousesComponent},
-      { path: 'characters', component: CharactersComponent}
+      { path: 'characters', component: CharactersComponent},
+      { path: 'seasons', component: SeasonsComponent}
     ])
   ]
 })

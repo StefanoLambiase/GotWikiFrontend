@@ -11,6 +11,7 @@ import {LayoutModule} from './shared/layout/layout.module';
 import {RouterModule} from '@angular/router';
 import {HousesModule} from './features/houses/houses.module';
 import {CharactersModule} from './features/characters/characters.module';
+import {SeasonsModule} from './features/seasons/seasons.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {CharactersModule} from './features/characters/characters.module';
     LocationsModule,
     HousesModule,
     CharactersModule,
+    SeasonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
