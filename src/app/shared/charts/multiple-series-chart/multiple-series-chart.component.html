@@ -1,0 +1,8 @@
+<ejs-chart id="chart-container" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title'>
+  <e-series-collection>
+    <e-series [dataSource]='chartData' type='StackingColumn' xName='x' yName='y' name='Private Consumption'></e-series>
+    <e-series [dataSource]='chartData' type='StackingColumn' xName='x' yName='z' name='IMBD Score'></e-series>
+    <e-series [dataSource]='chartData' type='StackingColumn' xName='x' yName='v' name='Tomato Score'></e-series>
+    <e-series [dataSource]='chartData' type='Line' xName='x' yName='y4' name='GDP' [marker]='marker' opacity=0.6></e-series>
+  </e-series-collection>
+</ejs-chart>

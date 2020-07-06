@@ -13,7 +13,6 @@ import {HousesModule} from './features/houses/houses.module';
 import {CharactersModule} from './features/characters/characters.module';
 import {SeasonsModule} from './features/seasons/seasons.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

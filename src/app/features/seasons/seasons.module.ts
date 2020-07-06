@@ -7,18 +7,20 @@ import {MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {SeasonService} from './services/season.service';
+import {ChartsModule} from '../../shared/charts/charts.module';
 
 
 
 @NgModule({
   declarations: [SeasonsComponent, SeasonTableComponent],
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatInputModule,
-    MatSortModule
-  ],
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        MatTableModule,
+        MatInputModule,
+        MatSortModule,
+        ChartsModule
+    ],
   providers: [
     SeasonService,
   ],
