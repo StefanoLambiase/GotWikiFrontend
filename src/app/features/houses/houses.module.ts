@@ -13,6 +13,8 @@ import { HousesCardComponent } from './components/houses-card/houses-card.compon
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import { HousesCharCardComponent } from './components/houses-char-card/houses-char-card.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -20,23 +22,25 @@ import {MatListModule} from '@angular/material/list';
   declarations: [
     HousesComponent,
     HousesTableComponent,
-    HousesCardComponent
+    HousesCardComponent,
+    HousesCharCardComponent
   ],
   exports: [
     HousesComponent
   ],
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        MatFormFieldModule,
-        MatTableModule,
-        MatInputModule,
-        MatSortModule,
-        MatGridListModule,
-        MatCardModule,
-        MatButtonModule,
-        MatListModule
-    ],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatInputModule,
+    MatSortModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule
+  ],
   providers: [
     HousesService
   ],

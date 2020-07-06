@@ -7,4 +7,5 @@ export class HouseKillCount {
   public status: boolean;
   public houseSeat: string;
   public houseWords: string;
+  public houseRegion: string;
 }

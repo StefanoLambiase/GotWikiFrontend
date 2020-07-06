@@ -1,9 +1,23 @@
-<p>Houses Page</p>
-<app-houses-table
-  (selectedHouseEvent) = "onSelectedHouse($event)">
-</app-houses-table>
-
-<app-houses-card
-  *ngIf="showDetails"
-  [houseKillCount]="this.selectedHouse">
-</app-houses-card>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <app-houses-table
+        (selectedHouseEvent) = "onSelectedHouse($event)">
+      </app-houses-table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <app-houses-card
+        *ngIf="showDetails"
+        [houseKillCount]="this.selectedHouse">
+      </app-houses-card>
+    </div>
+    <div class="col-sm">
+      <app-houses-char-card
+        *ngIf="showDetails"
+        [houseKillCount]="this.selectedHouse">
+      </app-houses-char-card>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,12 @@
 .example-card {
   max-width: 400px;
+  margin-top: 50px;
 }
 
+.example-header-image {
+  background-size: cover;
+}
+
+*.col-sm{
+  margin-top: 5px;
+}

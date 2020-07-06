@@ -27,7 +27,6 @@ export class HousesTableComponent implements OnInit {
       this.houseKillCount = data;
       this.dataSource = new MatTableDataSource(this.houseKillCount);
       this.dataSource.sort = this.sort;
-      console.log(this.houseKillCount[0].houseCoa);
     });
   }
 
