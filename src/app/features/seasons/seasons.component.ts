@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-seasons',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seasons.component.css']
 })
 export class SeasonsComponent implements OnInit {
-  seasonNumber: number;
+  seasonNumber = 2;
 
   constructor() { }
 
