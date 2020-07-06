@@ -14,7 +14,7 @@ export class SeasonTableComponent implements OnChanges {
   episodeToDisplay: EpisodePerSeason[];
   dataSource;
   @Input() seasonNumber: number;
-  columnsToDisplay = ['Title', 'Writer', 'Viewers Score', 'IMBD Score', 'Rotten Tomatoes Score'];
+  columnsToDisplay = ['Title', 'Writer', 'Number', 'Viewers Score', 'IMBD Score', 'Rotten Tomatoes Score'];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -29,6 +29,7 @@ export class SeasonTableComponent implements OnChanges {
       this.episodeToDisplay = data;
       this.dataSource = new MatTableDataSource(this.episodeToDisplay);
       this.dataSource.sort = this.sort;
+      console.log(this.episodeToDisplay[0].episodeNumber);
     });
   }
 

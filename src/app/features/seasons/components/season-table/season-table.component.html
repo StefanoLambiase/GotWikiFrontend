@@ -17,16 +17,21 @@
     <td mat-cell *matCellDef="let episodePerSeason"> {{ episodePerSeason.episodeWriter }} </td>
   </ng-container>
   <!-- Third column definition -->
+  <ng-container matColumnDef="Number">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header=""> Number </th>
+    <td mat-cell *matCellDef="let episodePerSeason"> {{ episodePerSeason.episodeNumber }} </td>
+  </ng-container>
+  <!-- Fourth column definition -->
   <ng-container matColumnDef="Viewers Score">
     <th mat-header-cell *matHeaderCellDef mat-sort-header=""> Viewers Score </th>
     <td mat-cell *matCellDef="let episodePerSeason"> {{ episodePerSeason.viewerScore }} </td>
   </ng-container>
-  <!-- Forth column definition -->
+  <!-- Fifth column definition -->
   <ng-container matColumnDef="IMBD Score">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> IMBD Score </th>
     <td mat-cell *matCellDef="let episodePerSeason"> {{ episodePerSeason.imbdScore }} </td>
   </ng-container>
-  <!-- Fifth column definition -->
+  <!-- Sixth column definition -->
   <ng-container matColumnDef="Rotten Tomatoes Score">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Rotten Tomatoes Score </th>
     <td mat-cell *matCellDef="let episodePerSeason"> {{ episodePerSeason.tomatoScore }} </td>

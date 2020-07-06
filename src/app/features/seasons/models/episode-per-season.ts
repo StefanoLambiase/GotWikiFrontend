@@ -4,4 +4,5 @@ export class EpisodePerSeason {
   public viewerScore: number;
   public imbdScore: number;
   public tomatoScore: number;
+  public episodeNumber: number;
 }
