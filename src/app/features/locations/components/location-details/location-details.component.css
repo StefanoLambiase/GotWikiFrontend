@@ -5,3 +5,12 @@ h3{
 button{
   margin-top: 25px;
 }
+
+.container{
+  background-color: white;
+  margin-top: 50px;
+}
+
+.details-title{
+  font-size: 25px;
+}

@@ -1,3 +1,8 @@
 *.col-sm{
   margin-top: 50px;
 }
+
+.container{
+  background-color: white;
+  margin-top: 50px;
+}

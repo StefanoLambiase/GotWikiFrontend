@@ -1,6 +1,19 @@
 .header{;
-  background-image: url("src/images/got_3.jpg");
-  background-position: center;
-  background-size: auto;
+  background-image: url("src/images/mainLogo.jpg");
+  background-position: right;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-color: black;
+}
+
+h1{
+  padding: 17px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 70px;
+  color: goldenrod;
+}
+
+h3{
+  padding: 17px;
+  color: white;
 }
